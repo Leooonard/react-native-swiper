@@ -126,6 +126,10 @@ export default Carousel = React.createClass({
     	}
   	},
 
+  	setPageWithoutAnimation (index) {
+  		this.refs.scrollView.setPageWithoutAnimation(index);
+  	},
+
 	render() {
 		let pages = this.props.children;
 
@@ -150,7 +154,6 @@ export default Carousel = React.createClass({
 					{...this.props}
 					initialPage = {this.props.index}
 					onPageSelected = {this.onScrollEnd}
-					style = {{flex: 1}}
 				> 
 					{pages} 
 				</ViewPagerAndroid>

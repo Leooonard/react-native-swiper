@@ -214,9 +214,15 @@ module.exports = React.createClass({
           if(index <= -1) {
             index = this.slideCount - 1
             offset[dir] = step * this.slideCount
+            if (Platform.OS === 'android') {
+                this.refs.carousel.setPageWithoutAnimation(index + 1);
+            }
           } else if (index >= this.slideCount) {
             index = 0
             offset[dir] = step
+            if (Platform.OS === 'android') {
+                this.refs.carousel.setPageWithoutAnimation(index + 1);
+            }
           }
       }
 
